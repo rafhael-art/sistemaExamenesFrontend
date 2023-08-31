@@ -19,6 +19,9 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import { SingUpComponent } from './pages/sing-up/sing-up.component';
 import { LoginComponent } from './pages/login/login.component';
 import { HomeComponent } from './pages/home/home.component';
+import { authInterceptorProviders } from './services/auth.interceptor';
+import { DashboardComponent } from './pages/admin/dashboard/dashboard.component';
+import { UserDashboardComponent } from './pages/user/user-dashboard/user-dashboard.component';
 
 
 @NgModule({
@@ -27,7 +30,9 @@ import { HomeComponent } from './pages/home/home.component';
     NavbarComponent,
     SingUpComponent,
     LoginComponent,
-    HomeComponent
+    HomeComponent,
+    DashboardComponent,
+    UserDashboardComponent,
   ],
   imports: [
     BrowserModule,
@@ -43,7 +48,9 @@ import { HomeComponent } from './pages/home/home.component';
     MatToolbarModule,
     MatIconModule
   ],
-  providers: [],
+  providers: [
+    authInterceptorProviders
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
